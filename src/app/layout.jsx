@@ -10,11 +10,13 @@ const roboto = Roboto({
 
 const RootLayout = ({ children }) => {
     return (
-        <html lang="en" className={roboto.className}>
+        <html lang="en" className={roboto.className} data-theme="light">
             <body cz-shortcut-listen="true">
-                <Header />
-                <Navbar />
-                {children}
+                <main>
+                    <Header />
+                    <Navbar />
+                    {children}
+                </main>
             </body>
         </html>
     );
