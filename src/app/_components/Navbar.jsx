@@ -17,11 +17,11 @@ const Navbar = () => {
 
     return (
         <nav>
-            <div className="flex flex-row justify-evenly my-2">
+            <div className="flex flex-row justify-evenly mt-2">
                 {navItems?.map(({ href, icon: Icon }) => (
                     <Link href={href} key={href} className="relative flex flex-col items-center w-full pb-2 transition-all duration-300">
                         <Icon size={25} className={`text-gray-700 transition-all duration-300 ${pathname === href ? "text-gray-700" : "opacity-60"}`} />
-                        <span className={`absolute bottom-0 w-14 h-1 bg-gray-700 rounded-full transition-all duration-300 ${pathname === href ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}></span>
+                        <span className={`absolute bottom-0 w-23 h-1 bg-gray-700 rounded-full transition-all duration-300 ${pathname === href ? "scale-100 opacity-100" : "scale-0 opacity-0"}`}></span>
                     </Link>
                 ))}
             </div>
