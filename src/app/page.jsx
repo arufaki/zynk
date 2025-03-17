@@ -1,22 +1,25 @@
-import { Bell, House, MessageCircle, Search, Settings, Users } from "lucide-react";
+import CardPost from "./_components/Card/CardPost";
+import PostList from "./_components/Card/PostList";
+import Modal from "./_components/Modal";
+import ModalTrigger from "./_components/ModalTrigger";
 
 const Page = () => {
     return (
-        <header className="mx-5 my-4">
-            <div className="flex flex-row items-center justify-between">
-                <h1 className="font-bold text-2xl text-gray-700">Zynk</h1>
-                <div className="flex flex-row gap-2">
-                    <Search className="text-gray-700" />
-                    <Settings className="text-gray-700" />
-                </div>
-            </div>
-            <div className="flex flex-row justify-evenly my-2">
-                <House className="text-gray-700" size={25} />
-                <Users className="text-gray-700" size={25} />
-                <MessageCircle className="text-gray-700" size={25} />
-                <Bell className="text-gray-700" size={25} />
-            </div>
-        </header>
+        <>
+            <section className="mx-5 mb-4 mt-6">
+                <ModalTrigger modalId="my_modal_3" className="w-full px-3 py-2 border border-gray-300 text-sm text-gray-600 rounded">
+                    Make a post...
+                </ModalTrigger>
+                <Modal id="my_modal_3">
+                    <h3 className="font-bold text-lg mb-3 text-gray-700">Buat Postingan!</h3>
+                    <textarea className="textarea h-24 w-full focus:outline-none focus:ring-0 mb-3" placeholder="Apa yang anda pikirkan, Fura?"></textarea>
+                    <button className="btn btn-outline w-full border border-gray-300 text-gray-700">Kirim!</button>
+                </Modal>
+            </section>
+            <section className="mx-5 mb-4 mt-6">
+                <PostList />
+            </section>
+        </>
     );
 };
 
