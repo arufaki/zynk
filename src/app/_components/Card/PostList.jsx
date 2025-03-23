@@ -13,7 +13,7 @@ const PostList = () => {
                     text: "Gw buka linkedin kan, orang pada hebat banget njir terutama aktif bikin status kegiatan produktif dan aktif buat personal branding. Kemudian gw termotivasi lah mau coba ikut bikin juga. Tapi waktu gw mau ikutan bikin juga malah tiba tiba jadi males, sama gatau mau bikin apa juga 😅",
                     likes: 50,
                     comments: 10,
-                    likedbyself: true,
+                    likedbyself: false,
                 },
                 {
                     postId: 2,
@@ -29,7 +29,7 @@ const PostList = () => {
                     text: "Gw buka linkedin kan, orang pada hebat banget njir terutama aktif bikin status kegiatan produktif dan aktif buat personal branding. Kemudian gw termotivasi lah mau coba ikut bikin juga. Tapi waktu gw mau ikutan bikin juga malah tiba tiba jadi males, sama gatau mau bikin apa juga 😅",
                     likes: 50,
                     comments: 10,
-                    likedbyself: true,
+                    likedbyself: false,
                 },
             ],
         },
