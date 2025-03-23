@@ -11,8 +11,7 @@ const RootLayout = ({ children }) => {
     return (
         <html lang="en" className={roboto.className} data-theme="light">
             <body cz-shortcut-listen="true">
-                <Header />
-                <main>{children}</main>
+                {children}
             </body>
         </html>
     );
