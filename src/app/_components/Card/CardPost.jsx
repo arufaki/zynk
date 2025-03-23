@@ -1,4 +1,3 @@
-import { Heart, MessageSquareMore, ShareIcon } from "lucide-react";
 import UserInfo from "./UserInfo";
 import PostContent from "./PostContent";
 import PostStats from "./PostStats";
