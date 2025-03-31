@@ -15,10 +15,34 @@ const FormRegister = () => {
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="px-5 mb-10">
-            <InputField label="Nama Depan" type="text" name="firstname" register={register} error={errors.firstname} validation={{ required: "Nama Depan wajib diisi" }} />
-            <InputField label="Nama Belakang" type="text" name="lastname" register={register} error={errors.lastname} validation={{ required: "Nama Belakang wajib diisi" }} />
-            <InputField label="Email" type="email" name="email" register={register} error={errors.email} validation={{ required: "Email wajib diisi" }} />
-            <InputField label="Password" type="password" name="password" register={register} error={errors.password} validation={{ required: "Password wajib diisi" }} />
+            <InputField
+                label="Nama Depan"
+                type="text"
+                name="firstname"
+                register={register}
+                error={errors.firstname}
+                placeholder="Masukkan Nama Depan"
+                validation={{ required: "Nama Depan wajib diisi" }}
+            />
+            <InputField
+                label="Nama Belakang"
+                type="text"
+                name="lastname"
+                register={register}
+                error={errors.lastname}
+                placeholder="Masukkan Nama Belakang"
+                validation={{ required: "Nama Belakang wajib diisi" }}
+            />
+            <InputField label="Email" type="email" name="email" register={register} error={errors.email} placeholder="example@mail.com" validation={{ required: "Email wajib diisi" }} />
+            <InputField
+                label="Password"
+                type="password"
+                name="password"
+                register={register}
+                error={errors.password}
+                placeholder="Masukkan Password"
+                validation={{ required: "Password wajib diisi" }}
+            />
 
             <label className="fieldset-label text-sm mb-3">
                 <InputField type="checkbox" name="checkbox" register={register} error={errors.checkbox} validation={{ required: "Anda harus menyetujui syarat & ketentuan" }} />
