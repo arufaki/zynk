@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-const InputField = ({ label, type, name, register, error, validation }) => {
+const InputField = ({ label, type, name, register, error, validation, placeholder }) => {
     return (
         <>
             <div className="flex flex-col mb-3">
@@ -8,9 +8,10 @@ const InputField = ({ label, type, name, register, error, validation }) => {
                 <input
                     type={type}
                     {...register(name, validation)}
+                    placeholder={placeholder}
                     className={clsx(
                         error ? "border-red-400" : "border-gray-300", // Kondisi error
-                        type === "checkbox" ? "checkbox" : "border rounded-lg p-2", // Styling khusus checkbox
+                        type === "checkbox" ? "checkbox" : "border rounded-lg p-2 placeholder:text-sm", // Styling khusus checkbox
                     )}
                 />
                 {error && <p className="text-red-500 text-xs">{error.message}</p>}
