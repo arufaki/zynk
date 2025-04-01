@@ -3,16 +3,35 @@
 import InputField from "app/_components/Authentication/InputField";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { supabase } from "../../../../lib/supabase";
+import { useRouter } from "next/navigation";
 
 const FormLogin = () => {
+    const router = useRouter();
+
     const {
         register,
         handleSubmit,
         formState: { errors, isValid },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Data Login : ", data);
+    const onSubmit = async (data) => {
+        try {
+            const { data: user, error } = await supabase.auth.signInWithPassword({
+                email: data.email,
+                password: data.password,
+            });
+            if (error) {
+                throw error;
+            } else {
+                // localStorage.setItem("token", user.session.access_token);
+                document.cookie = `sb-access-token=${user.session.access_token}; path=/; max-age=86400`;
+                console.log("Login", user);
+                router.push("/");
+            }
+        } catch (error) {
+            console.log("Error", error.message);
+        }
     };
 
     return (
