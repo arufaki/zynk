@@ -1,7 +1,6 @@
-import CardPost from "./_components/Card/CardPost";
-import PostList from "./_components/Card/PostList";
-import Modal from "./_components/Modal";
-import ModalTrigger from "./_components/ModalTrigger";
+import PostList from "app/_components/Card/PostList";
+import Modal from "app/_components/Modal";
+import ModalTrigger from "app/_components/ModalTrigger";
 
 const Page = () => {
     return (
