@@ -2,16 +2,36 @@
 
 import InputField from "app/_components/Authentication/InputField";
 import { useForm } from "react-hook-form";
+import { supabase } from "../../../../lib/supabase";
+import { useRouter } from "next/navigation";
 
 const FormRegister = () => {
+    const router = useRouter();
+
     const {
         register,
         handleSubmit,
         formState: { errors, isValid },
     } = useForm();
 
-    const onSubmit = (data) => {
-        console.log("Data Form:", data);
+    const onSubmit = async (data) => {
+        const displayName = `${data.firstname} ${data.lastname}`;
+
+        try {
+            const { data: user, error } = await supabase.auth.signUp({
+                email: data.email,
+                password: data.password,
+                options: {
+                    data: { displayName },
+                },
+            });
+
+            if (error) throw error;
+            console.log("User created:", user);
+            router.push("/login");
+        } catch (error) {
+            console.log("Error:", error.message);
+        }
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="px-5 mb-10">
